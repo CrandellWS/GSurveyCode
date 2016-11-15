@@ -1,0 +1,25 @@
+videoDirName: C:\uploaded\
+
+gsServiceURL: http://localhost:8080
+jwtkey:
+
+serverID: 1
+ffmpeg:  C:\Program Files\ffmpeg\bin\ffmpeg.exe
+ffprobe: C:\Program Files\ffmpeg\bin\ffprobe.exe
+
+jerseyClient:
+  timeout: 3s
+
+server:
+  applicationConnectors:
+  - type: http
+    port: 9000
+  adminConnectors:
+  - type: http
+    port: 9001
+
+# Logging settings.
+logging:
+
+# The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+ level: INFO

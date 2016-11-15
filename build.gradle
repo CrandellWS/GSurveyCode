@@ -1,0 +1,22 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'application'
+
+    repositories {
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+
+
+    run {
+        if(project.hasProperty('args')){
+            args project.args.split('\\s+')
+        }
+    }
+}
+
+group = 'gamesurvey'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+

@@ -1,0 +1,3 @@
+rootProject.name = 'gamesurvey'
+include 'gsvideo', 'gsweb'
+
