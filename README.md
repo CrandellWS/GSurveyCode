@@ -1,11 +1,14 @@
 # GSurveyCode
 GSurveyCode consists of two services: 
-
-gsWeb -  provides web server and rest interfaces, talks to the database. 
-
-gsVideo - receives file uploads, handles streaming content to clients.
+* gsWeb -  provides web server and rest interfaces, talks to the database. 
+* gsVideo - receives file uploads, handles streaming content to clients.
 
 This repository contains the full GameSurvey code.
+
+##Dependencies
+The video server requires a working ffmpeg installation for transcoding, expecting path to `ffmpeg`and `ffprobe` in his config file.
+
+
 
 
 ##Compile
@@ -89,6 +92,11 @@ logging:
 # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
  level: INFO
 ```
+## JWT
+Both servers require a matching jwt key for internal communication and user authentication.
+
+If the jwtkey field is empty, a random jwt key is generated and logged to stdout.
+This key should be put into the configuration files.
 
 ##System overview
 ![](gsarch.png)
@@ -97,4 +105,7 @@ logging:
 ##Running GSurveyCode
     java -jar gsweb.jar server gsweb.yml
     java -jar gsvideo.jar server gsvideo.yml
+    
+##Deployment
+For production a reverse proxy like [https://nginx.org/](https://nginx.org/) or [http://www.haproxy.org/](http://www.haproxy.org/) may provide https and provide a single endpoint for both services.
 
