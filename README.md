@@ -1,7 +1,20 @@
 # GSurveyCode
+GSurveyCode consists of two services: 
+
+gsWeb -  provides web server and rest interfaces, talks to the database. 
+
+gsVideo - receives file uploads, handles streaming content to clients.
+
+This repository contains the full GameSurvey code.
+
 
 ##Compile
+[https://gradle.org/](gradle) is used as build system.:
+
     gradle dist
+    
+Builds both services and packs them as seperates jar files.
+
     
 ##Configuration
 ###Web Server
@@ -77,4 +90,11 @@ logging:
  level: INFO
 ```
 
+##System overview
+![](gsarch.png)
+
+
+##Running GSurveyCode
+    java -jar gsweb.jar server gsweb.yml
+    java -jar gsvideo.jar server gsvideo.yml
 
