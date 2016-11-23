@@ -6,9 +6,8 @@ GSurveyCode consists of two services:
 This repository contains the full GameSurvey code.
 
 ##Dependencies
-The video server requires a working ffmpeg installation for transcoding, expecting path to `ffmpeg`and `ffprobe` in his config file.
-
-
+* ffmpeg:  The video server requires a working ffmpeg installation for transcoding, expecting path to `ffmpeg`and `ffprobe` in his config file.
+* JDK:  JDK 8 is required to build GSurveyCode
 
 
 ##Compile
